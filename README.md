@@ -1,2 +1,3 @@
-# Sms-Remainder-System
-Developed and deployed an SMS Reminder System using Twilio's API, enabling automated, time-sensitive notifications for users. The system was designed for scalability and flexibility, featuring dynamic message customization, scheduling, and real-time delivery status tracking.
+# Fitness Activitiy Scheduler
+
+A Fitness Health Activity System using the Fitbit API tracks real-time health data such as steps, calories, heart rate, and sleep. It securely connects through OAuth 2.0 to fetch user activity, compare it with set goals, and provide reminders or notifications. The system helps users monitor progress, stay active, and improve fitness through personalized insights and reports.
