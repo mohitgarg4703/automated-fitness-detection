@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Appointment</title>
+</head>
+<body>
+    <h1>Doctor Appointment Form</h1>
+    <form action="/doctorappointcreate" method="POST">
+        <!-- Doctor's Mobile Number -->
+        <label for="doctor_mobile">Doctor's Mobile Number:</label><br>
+        <input type="text" id="doctor_mobile" name="doctor_mobile" placeholder="Enter doctor's mobile number" required><br><br>
+
+        <!-- User's Mobile Number -->
+        <label for="user_mobile">User's Mobile Number:</label><br>
+        <input type="text" id="user_mobile" name="user_mobile" placeholder="Enter user's mobile number" required><br><br>
+
+        <!-- Google Meet Link -->
+        <label for="google_meet_link">Google Meet Link:</label><br>
+        <input type="url" id="google_meet_link" name="google_meet_link" placeholder="Enter Google Meet link" required><br><br>
+
+        <!-- Submit Button -->
+        <button type="submit">Send Appointment</button>
+    </form>
+</body>
+</html>

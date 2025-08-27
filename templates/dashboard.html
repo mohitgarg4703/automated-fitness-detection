@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+        }
+        .header {
+            width: 100%;
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px 0;
+        }
+        .box {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+        .box h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #333333;
+        }
+        .stats {
+            margin: 10px 0;
+            text-align: center;
+        }
+        .stats span {
+            display: block;
+            font-size: 16px;
+            color: #666666;
+        }
+        .stats .number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .button {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #007bff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            font-size: 14px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        .sync {
+            background-color: #28a745;
+        }
+        .sync:hover {
+            background-color: #1c7c34;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to the School Dashboard</h1>
+    </div>
+    <div class="dashboard">
+        <div class="box">
+            <h2>I Talk</h2>
+            <div class="stats">
+                <span class="number">120</span>
+                <span>Last Updated: 2 hours ago</span>
+            </div>
+            <div class="buttons">
+                <a href="/i_talk" class="button">Show Details</a>
+                <a href="#" class="button sync">Sync Data Now</a>
+            </div>
+        </div>
+        <div class="box">
+            <h2>Upwork</h2>
+            <div class="stats">
+                <span class="number">75</span>
+                <span>Last Updated: 1 day ago</span>
+            </div>
+            <div class="buttons">
+                <a href="/upwork" class="button">Show Details</a>
+                <a href="#" class="button sync">Sync Data Now</a>
+            </div>
+        </div>
+        <div class="box">
+            <h2>Fitbit</h2>
+            <div class="stats">
+                <span class="number">200</span>
+                <span>Last Updated: 5 minutes ago</span>
+            </div>
+            <div class="buttons">
+                <a href="/fitbit" class="button">Show Details</a>
+                <a href="#" class="button sync">Sync Data Now</a>
+            </div>
+        </div>
+        <div class="box">
+            <h2>Appointments</h2>
+            <div class="stats">
+                <span class="number">30</span>
+                <span>Last Updated: 3 hours ago</span>
+            </div>
+            <div class="buttons">
+                <a href="/appointments" class="button">Show Details</a>
+                <a href="#" class="button sync">Sync Data Now</a>
+            
+            </div>
+        </div>
+        <div class="box">
+            <h2>Toggl</h2>
+            <div class="stats">
+                <span class="number">10</span>
+                <span>Last Updated: 1 hours ago</span>
+            </div>
+            <div class="buttons">
+                <a href="/toggl" class="button">Show Details</a>
+                <a href="#" class="button sync">Sync Data Now</a>
+            </div>
+        </div>
+        <div class="box">
+            <h2>Sms Remainder</h2>
+            <div class="stats">
+                <span class="number">250</span>
+                <span>Last Updated: 1 hours ago</span>
+            </div>
+            <div class="buttons">
+                <a href="#" class="button" id="manualHitButton">Manually Hit</a>
+            </div><div id="message">
+        </div>
+            
+    </div>
+    <script>
+        document.getElementById("manualHitButton").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent the default action (link navigation)
+            
+            // Disable the button after it's clicked
+            this.disabled = true;
+            
+            // Show the message
+            document.getElementById("message").innerText = "The action will run after 5 hours.";
+            
+            // Set a timer to re-enable the button after 5 hours (5 hours = 18000000 milliseconds)
+            setTimeout(function() {
+                document.getElementById("manualHitButton").disabled = false;
+                document.getElementById("message").innerText = "You can manually hit again.";
+            }, 18000000); // 5 hours in milliseconds
+        });
+        
+    </script>
+</body>
+</html>

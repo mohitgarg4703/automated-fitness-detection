@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggl Data</title>
+    <style>
+        .box { border: 1px solid #ccc; padding: 20px; width: 300px; }
+        .stats { margin: 10px 0; }
+        .number { font-size: 24px; font-weight: bold; }
+        .button { text-decoration: none; padding: 10px 20px; background: #007BFF; color: #fff; border-radius: 5px; margin-right: 10px; }
+        .button.sync { background: #28A745; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Toggl Data</h2>
+        <div class="stats">
+            <span class="number">{{ hours }} hours</span>
+            <span class="updated">Last Updated: {{ updated_at }}</span>
+        </div>
+        <div class="buttons">
+            <a href="/" class="button">Back to Dashboard</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+{% comment %} <!DOCTYPE html>
+<html>
+<head>
+    <title>Fitbit Data</title>
+</head>
+<body>
+    <h1>Fitbit Data</h1>
+    <div id="data-container">
+        <p>Steps: <span id="steps"></span></p>
+        <p>Calories: <span id="calories"></span></p>
+        <p>Heart Rate: <span id="heart-rate"></span></p>
+        <p>Active Minutes: <span id="active-minutes"></span></p>
+    </div>
+
+    <script>
+        fetch('/fitbit')
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "success") {
+                    document.getElementById("steps").innerText = data.data.steps;
+                    document.getElementById("calories").innerText = data.data.calories;
+                    document.getElementById("heart-rate").innerText = data.data.heart_rate;
+                    document.getElementById("active-minutes").innerText = data.data.active_minutes;
+                } else {
+                    console.error("Error:", data.message);
+                }
+            })
+            .catch(err => console.error("Fetch Error:", err));
+    </script>
+</body>
+</html> {% endcomment %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fitbit Data</title>
+</head>
+<body>
+    <h1>Fitbit Data</h1>
+    <div id="data-container">
+        <p>Steps: <span id="steps"></span></p>
+        <p>Calories: <span id="calories"></span></p>
+        <p>Heart Rate: <span id="heart-rate"></span></p>
+        <p>Active Minutes: <span id="active-minutes"></span></p>
+    </div>
+
+    <script>
+        fetch('/fitbit')
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "success") {
+                    document.getElementById("steps").innerText = data.data.steps;
+                    document.getElementById("calories").innerText = data.data.calories;
+                    document.getElementById("heart-rate").innerText = data.data.heart_rate;
+                    document.getElementById("active-minutes").innerText = data.data.active_minutes;
+                } else {
+                    console.error("Error:", data.message);
+                }
+            })
+            .catch(err => console.error("Fetch Error:", err));
+    </script>
+</body>
+</html>
